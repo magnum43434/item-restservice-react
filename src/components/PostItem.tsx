@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { getItems, postItem } from '../Functions/APIFunctionsItem';
-import item from "../Models/item";
 import { AxiosError } from "axios";
 
 interface IProps {
@@ -61,7 +60,7 @@ export default class PostItem extends Component<IProps, IState> {
 
     async PostItem() {
         const ItemListCount = await getItems(this.state.uri);
-        const item: item = {
+        const item = {
             Id: ItemListCount.data.length + 1,
             Name: this.state.name,
             Quality: this.state.quality,

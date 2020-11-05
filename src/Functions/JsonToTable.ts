@@ -18,19 +18,15 @@ export default function json2table(json: any, classes?: string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    cols.map(function (col) {
-        headerRow += `<th>${capitalizeFirstLetter(col)}</th>`;
-    });
+    cols.map((col) => headerRow += `<th>${capitalizeFirstLetter(col)}</th>`);
 
-    json.map(function (row: any) {
+    json.map((row: any) => {
         bodyRows += '<tr data-toggle="modal" data-target="#myModal">';
-
-        cols.map(function (colName) {
-            bodyRows += `<td>${row[colName]}</td>`;
-        })
-
+        cols.map((colName) => bodyRows += `<td>${row[colName]}</td>`);
         bodyRows += '</tr>';
-    });
+        return "done"
+    })
+
 
     return (`<table class="${classes}"><thead><tr>${headerRow}</tr></thead><tbody>${bodyRows}</tbody></table>`)
 }

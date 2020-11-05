@@ -16,6 +16,7 @@ export default function json2list(json: any, classes?: string) {
                 bodyRows += `<h5>${capitalizeFirstLetter(el[key])}: ${element[el[key]]}</h5>`;
             }
             bodyRows += `</li>`;
+            return "done"
         });
     } else {
         bodyRows += `<li class="list-group-item">`;

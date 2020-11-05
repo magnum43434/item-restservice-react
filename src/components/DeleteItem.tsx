@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import React, { ChangeEvent, Component } from 'react'
+import React, { Component } from 'react'
 import { deleteItem } from "../Functions/APIFunctionsItem";
 
 
